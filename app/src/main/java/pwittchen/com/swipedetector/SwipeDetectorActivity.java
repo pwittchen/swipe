@@ -1,5 +1,6 @@
 package pwittchen.com.swipedetector;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -15,7 +16,7 @@ public class SwipeDetectorActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        swipeDetector = new SwipeDetector(getSwipeListener());
+        swipeDetector = new SwipeDetector(getSwipeListener(this));
     }
 
     @Override
@@ -24,7 +25,7 @@ public class SwipeDetectorActivity extends ActionBarActivity {
         return super.dispatchTouchEvent(event);
     }
 
-    private SwipeDetector.SwipeListener getSwipeListener() {
+    private SwipeDetector.SwipeListener getSwipeListener(final Context context) {
         return new SwipeDetector.SwipeListener() {
             @Override
             public void onSwipingLeft(MotionEvent event) {
@@ -34,7 +35,7 @@ public class SwipeDetectorActivity extends ActionBarActivity {
             @Override
             public void onSwipedLeft(MotionEvent event) {
                 Log.d(TAG, "onSwipedLeft");
-                Toast.makeText(SwipeDetectorActivity.this, "swiped left!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "swiped left!", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -45,7 +46,7 @@ public class SwipeDetectorActivity extends ActionBarActivity {
             @Override
             public void onSwipedRight(MotionEvent event) {
                 Log.d(TAG, "onSwipedRight");
-                Toast.makeText(SwipeDetectorActivity.this, "swiped right!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "swiped right!", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -56,7 +57,7 @@ public class SwipeDetectorActivity extends ActionBarActivity {
             @Override
             public void onSwipedUp(MotionEvent event) {
                 Log.d(TAG, "onSwipedUp");
-                Toast.makeText(SwipeDetectorActivity.this, "swiped up!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "swiped up!", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -67,7 +68,7 @@ public class SwipeDetectorActivity extends ActionBarActivity {
             @Override
             public void onSwipedDown(MotionEvent event) {
                 Log.d(TAG, "onSwipedDown");
-                Toast.makeText(SwipeDetectorActivity.this, "swiped down!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "swiped down!", Toast.LENGTH_SHORT).show();
             }
         };
     }

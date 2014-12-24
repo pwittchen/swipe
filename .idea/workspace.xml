@@ -17,7 +17,11 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: pwittchen.com.swipedetector" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2423b2f-26d1-49e3-b3e1-6e2f4d031f8b" name="Default" comment="" />
+    <list default="true" id="a2423b2f-26d1-49e3-b3e1-6e2f4d031f8b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pwittchen/com/swipedetector/SwipeDetectorActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/pwittchen/com/swipedetector/SwipeDetectorActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="SwipeDetector.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,15 +46,15 @@
       <file leaf-file-name="SwipeDetectorActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/pwittchen/com/swipedetector/SwipeDetectorActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56363636" vertical-offset="0" max-vertical-offset="1292">
-              <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+            <state vertical-scroll-proportion="1.1818181" vertical-offset="0" max-vertical-offset="1292">
+              <caret line="70" column="38" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
               <folding>
-                <element signature="e#957#958#0" expanded="true" />
-                <element signature="e#1016#1017#0" expanded="true" />
-                <element signature="e#1341#1342#0" expanded="true" />
-                <element signature="e#1401#1402#0" expanded="true" />
-                <element signature="e#1726#1727#0" expanded="true" />
-                <element signature="e#1783#1784#0" expanded="true" />
+                <element signature="e#1014#1015#0" expanded="true" />
+                <element signature="e#1073#1074#0" expanded="true" />
+                <element signature="e#1379#1380#0" expanded="true" />
+                <element signature="e#1439#1440#0" expanded="true" />
+                <element signature="e#1745#1746#0" expanded="true" />
+                <element signature="e#1802#1803#0" expanded="true" />
                 <element signature="e#2101#2102#0" expanded="true" />
                 <element signature="e#2160#2161#0" expanded="true" />
               </folding>
@@ -89,6 +93,9 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="true" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="tasksExpandState">
@@ -695,10 +702,10 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/pwittchen/com/swipedetector/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/pwittchen/com/swipedetector/SwipeDetectorActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/pwittchen/com/swipedetector/SwipeDetector.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/pwittchen/com/swipedetector/SwipeDetectorActivity.java" />
       </list>
     </option>
   </component>
@@ -708,7 +715,7 @@
     <option name="width" value="1869" />
     <option name="height" value="1056" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -868,7 +875,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="options.lastSelected" value="appearance" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -877,6 +884,7 @@
     <property name="LayoutCode.rearrangeEntriesXML" value="true" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="05084eb60a66a60d" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_21" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Android Application.app">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -1032,18 +1040,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="51" y="24" width="1869" height="1056" extended-state="7" />
+    <frame x="51" y="24" width="1869" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32950193" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -1143,15 +1151,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/pwittchen/com/swipedetector/SwipeDetectorActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56363636" vertical-offset="0" max-vertical-offset="1292">
-          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+        <state vertical-scroll-proportion="1.1818181" vertical-offset="0" max-vertical-offset="1292">
+          <caret line="70" column="38" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
           <folding>
-            <element signature="e#957#958#0" expanded="true" />
-            <element signature="e#1016#1017#0" expanded="true" />
-            <element signature="e#1341#1342#0" expanded="true" />
-            <element signature="e#1401#1402#0" expanded="true" />
-            <element signature="e#1726#1727#0" expanded="true" />
-            <element signature="e#1783#1784#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1073#1074#0" expanded="true" />
+            <element signature="e#1379#1380#0" expanded="true" />
+            <element signature="e#1439#1440#0" expanded="true" />
+            <element signature="e#1745#1746#0" expanded="true" />
+            <element signature="e#1802#1803#0" expanded="true" />
             <element signature="e#2101#2102#0" expanded="true" />
             <element signature="e#2160#2161#0" expanded="true" />
           </folding>
