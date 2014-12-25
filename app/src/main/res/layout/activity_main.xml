@@ -10,8 +10,9 @@
     android:gravity="center">
 
     <TextView
+        android:id="@+id/info"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_swipe_detector" />
+        android:layout_height="wrap_content"       android:text="@string/hello_swipe_detector"
+        android:textSize="@dimen/activity_text_size"/>
 
 </RelativeLayout>

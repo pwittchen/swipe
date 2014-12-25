@@ -1,22 +1,21 @@
 package pwittchen.com.swipedetector;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.MotionEvent;
-import android.widget.Toast;
+import android.widget.TextView;
 
 public class SwipeDetectorActivity extends ActionBarActivity {
 
-    private final static String TAG = "SwipeDetector";
     private SwipeDetector swipeDetector;
+    private TextView info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        swipeDetector = new SwipeDetector(getSwipeListener(this));
+        info = (TextView) findViewById(R.id.info);
+        swipeDetector = new SwipeDetector(getSwipeListener());
     }
 
     @Override
@@ -25,50 +24,46 @@ public class SwipeDetectorActivity extends ActionBarActivity {
         return super.dispatchTouchEvent(event);
     }
 
-    private SwipeDetector.SwipeListener getSwipeListener(final Context context) {
+    private SwipeDetector.SwipeListener getSwipeListener() {
         return new SwipeDetector.SwipeListener() {
             @Override
             public void onSwipingLeft(MotionEvent event) {
-                Log.d(TAG, "onSwipingLeft");
+                info.setText("swiping left");
             }
 
             @Override
             public void onSwipedLeft(MotionEvent event) {
-                Log.d(TAG, "onSwipedLeft");
-                Toast.makeText(context, "swiped left!", Toast.LENGTH_SHORT).show();
+                info.setText("swiped left");
             }
 
             @Override
             public void onSwipingRight(MotionEvent event) {
-                Log.d(TAG, "onSwipingRight");
+                info.setText("swiping right");
             }
 
             @Override
             public void onSwipedRight(MotionEvent event) {
-                Log.d(TAG, "onSwipedRight");
-                Toast.makeText(context, "swiped right!", Toast.LENGTH_SHORT).show();
+                info.setText("swiped right");
             }
 
             @Override
             public void onSwipingUp(MotionEvent event) {
-                Log.d(TAG, "onSwipingUp");
+                info.setText("swiping up");
             }
 
             @Override
             public void onSwipedUp(MotionEvent event) {
-                Log.d(TAG, "onSwipedUp");
-                Toast.makeText(context, "swiped up!", Toast.LENGTH_SHORT).show();
+                info.setText("swiped up");
             }
 
             @Override
             public void onSwipingDown(MotionEvent event) {
-                Log.d(TAG, "onSwipingDown");
+                info.setText("swiping down");
             }
 
             @Override
             public void onSwipedDown(MotionEvent event) {
-                Log.d(TAG, "onSwipedDown");
-                Toast.makeText(context, "swiped down!", Toast.LENGTH_SHORT).show();
+                info.setText("swiped down");
             }
         };
     }
