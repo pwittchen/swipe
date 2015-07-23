@@ -28,6 +28,11 @@ Example
 
 Exemplary usage of `SwipeDetector` is shown in [`SwipeDetectorActivity`](https://github.com/pwittchen/SwipeDetector/blob/master/app/src/main/java/pwittchen/com/swipedetector/SwipeDetectorActivity.java).
 
+Similar projects
+----------------
+
+[better gesture detector](https://github.com/Polidea/better-gesture-detector)
+
 References
 ----------
 
