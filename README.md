@@ -1,7 +1,7 @@
 SwipeDetector
 =============
 
-Detecting swipe events on Android.
+Detects swipe events on Android.
 
 Overview
 --------
