@@ -7,19 +7,32 @@ Detects swipe events on Android.
 
 Documentation and samples will be provided later.
 
+Contents
+--------
+- [Usage](#usage)
+  - [Listener](#listener)
+  - [RxJava](#rxjava)
+- [Example](#example)
+- [Download](#download)
+- [Tests](#tests)
+- [Code style](#code-style)
+- [Static code analysis](#static-code-analysis)
+- [References](#references)
+- [License](#license)
+
 Usage
 -----
 
-### Usage with listener
+### Listener
 
 TBD.
 
-### Usage with RxJava
+### RxJava
 
 TBD.
 
-Examples
---------
+Example
+-------
 
 TBD.
 
