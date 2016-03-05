@@ -1,4 +1,4 @@
-package com.github.pwittchen.swipes.app;
+package com.github.pwittchen.swipe.app;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,21 +7,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.widget.TextView;
-import com.github.pwittchen.swipes.library.Swipes;
-import com.github.pwittchen.swipes.library.SwipeListener;
+import com.github.pwittchen.swipe.library.Swipe;
+import com.github.pwittchen.swipe.library.SwipeListener;
 import pwittchen.com.swipedetector.R;
 
-public class SwipesActivity extends AppCompatActivity {
+public class SwipeActivity extends AppCompatActivity {
 
   protected TextView info;
-  private Swipes swipes;
+  private Swipe swipe;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     info = (TextView) findViewById(R.id.info);
-    swipes = new Swipes();
-    swipes.addListener(new SwipeListener() {
+    swipe = new Swipe();
+    swipe.addListener(new SwipeListener() {
       @Override public void onSwipingLeft(final MotionEvent event) {
         info.setText("SWIPING_LEFT");
       }
@@ -57,7 +57,7 @@ public class SwipesActivity extends AppCompatActivity {
   }
 
   @Override public boolean dispatchTouchEvent(MotionEvent event) {
-    swipes.onTouchEvent(event);
+    swipe.onTouchEvent(event);
     return super.dispatchTouchEvent(event);
   }
 
@@ -71,7 +71,7 @@ public class SwipesActivity extends AppCompatActivity {
       case R.id.listener:
         break;
       case R.id.rx:
-        final Intent intent = new Intent(this, SwipesRxActivity.class);
+        final Intent intent = new Intent(this, SwipeRxActivity.class);
         startActivity(intent);
         break;
     }

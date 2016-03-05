@@ -3,7 +3,7 @@ swipe
 
 Detects swipe events on Android.
 
-![swipe gestures](art/swipes.png)
+![swipe gestures](art/swipe.png)
 
 Documentation and samples will be provided later.
 

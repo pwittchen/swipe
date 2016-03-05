@@ -1,4 +1,4 @@
-package com.github.pwittchen.swipes.app;
+package com.github.pwittchen.swipe.app;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,25 +6,25 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.widget.TextView;
-import com.github.pwittchen.swipes.library.Swipes;
-import com.github.pwittchen.swipes.library.SwipeEvent;
+import com.github.pwittchen.swipe.library.Swipe;
+import com.github.pwittchen.swipe.library.SwipeEvent;
 import pwittchen.com.swipedetector.R;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
-public class SwipesRxActivity extends AppCompatActivity {
+public class SwipeRxActivity extends AppCompatActivity {
   protected TextView info;
-  private Swipes swipes;
+  private Swipe swipe;
   private Subscription subscription;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     info = (TextView) findViewById(R.id.info);
-    swipes = new Swipes();
-    subscription = swipes.observe()
+    swipe = new Swipe();
+    subscription = swipe.observe()
         .subscribeOn(Schedulers.computation())
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(new Action1<SwipeEvent>() {
@@ -35,7 +35,7 @@ public class SwipesRxActivity extends AppCompatActivity {
   }
 
   @Override public boolean dispatchTouchEvent(MotionEvent event) {
-    swipes.onTouchEvent(event);
+    swipe.onTouchEvent(event);
     return super.dispatchTouchEvent(event);
   }
 

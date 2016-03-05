@@ -1,10 +1,10 @@
-package com.github.pwittchen.swipes.library;
+package com.github.pwittchen.swipe.library;
 
 import android.view.MotionEvent;
 import rx.Observable;
 import rx.Subscriber;
 
-public class Swipes {
+public class Swipe {
 
   private SwipeListener swipeListener;
   private Subscriber<? super SwipeEvent> subscriber;
@@ -27,7 +27,7 @@ public class Swipes {
     this.swipeListener = createReactiveSwipeListener();
     return Observable.create(new Observable.OnSubscribe<SwipeEvent>() {
       @Override public void call(final Subscriber<? super SwipeEvent> subscriber) {
-        Swipes.this.subscriber = subscriber;
+        Swipe.this.subscriber = subscriber;
       }
     });
   }

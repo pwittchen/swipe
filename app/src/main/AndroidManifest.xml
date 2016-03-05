@@ -9,7 +9,7 @@
       android:theme="@style/AppTheme">
     <activity
         android:label="@string/listener"
-        android:name="com.github.pwittchen.swipes.app.SwipesActivity">
+        android:name="com.github.pwittchen.swipe.app.SwipeActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
         <category android:name="android.intent.category.LAUNCHER"/>
@@ -17,7 +17,7 @@
     </activity>
     <activity
         android:label="@string/rx"
-        android:name="com.github.pwittchen.swipes.app.SwipesRxActivity"/>
+        android:name="com.github.pwittchen.swipe.app.SwipeRxActivity"/>
   </application>
 
 </manifest>
