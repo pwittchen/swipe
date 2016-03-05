@@ -4,7 +4,7 @@ import android.view.MotionEvent;
 
 public class SwipeDetector {
 
-    private SwipeListener swipeListener;
+    private final SwipeListener swipeListener;
     /**
      * Threshold is added for neglecting swiping
      * when differences between changed x or y coordinates are too small
@@ -15,29 +15,11 @@ public class SwipeDetector {
     private float yDown, yUp;
     private float xMove, yMove;
 
-    public interface SwipeListener {
-        void onSwipingLeft(MotionEvent event);
-
-        void onSwipedLeft(MotionEvent event);
-
-        void onSwipingRight(MotionEvent event);
-
-        void onSwipedRight(MotionEvent event);
-
-        void onSwipingUp(MotionEvent event);
-
-        void onSwipedUp(MotionEvent event);
-
-        void onSwipingDown(MotionEvent event);
-
-        void onSwipedDown(MotionEvent event);
-    }
-
-    public SwipeDetector(SwipeListener swipeListener) {
+    public SwipeDetector(final SwipeListener swipeListener) {
         this.swipeListener = swipeListener;
     }
 
-    public void onTouchEvent(MotionEvent event) {
+    public void onTouchEvent(final MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:   // user started touching the screen
                 xDown = event.getX();
@@ -46,12 +28,13 @@ public class SwipeDetector {
             case MotionEvent.ACTION_UP:     // user stopped touching the screen
                 xUp = event.getX();
                 yUp = event.getY();
-                boolean swipedHorizontally = Math.abs(xUp - xDown) > SWIPED_THRESHOLD;
-                boolean swipedVertically = Math.abs(yUp - yDown) > SWIPED_THRESHOLD;
+                final boolean swipedHorizontally = Math.abs(xUp - xDown) > SWIPED_THRESHOLD;
+                final boolean swipedVertically = Math.abs(yUp - yDown) > SWIPED_THRESHOLD;
 
                 if (swipedHorizontally) {
-                    boolean swipedRight = xUp > xDown;
-                    boolean swipedLeft = xUp < xDown;
+                    final boolean swipedRight = xUp > xDown;
+                    final boolean swipedLeft = xUp < xDown;
+
                     if (swipedRight) {
                         swipeListener.onSwipedRight(event);
                     }
@@ -61,8 +44,8 @@ public class SwipeDetector {
                 }
 
                 if (swipedVertically) {
-                    boolean swipedDown = yDown < yUp;
-                    boolean swipedUp = yDown > yUp;
+                    final boolean swipedDown = yDown < yUp;
+                    final boolean swipedUp = yDown > yUp;
                     if (swipedDown) {
                         swipeListener.onSwipedDown(event);
                     }
@@ -74,11 +57,13 @@ public class SwipeDetector {
             case MotionEvent.ACTION_MOVE:   // user is moving finger on the screen
                 xMove = event.getX();
                 yMove = event.getY();
-                boolean isSwipingHorizontally = Math.abs(xMove - xDown) > SWIPING_THRESHOLD;
-                boolean isSwipingVertically = Math.abs(yMove - yDown) > SWIPING_THRESHOLD;
+                final boolean isSwipingHorizontally = Math.abs(xMove - xDown) > SWIPING_THRESHOLD;
+                final boolean isSwipingVertically = Math.abs(yMove - yDown) > SWIPING_THRESHOLD;
+
                 if (isSwipingHorizontally) {
-                    boolean isSwipingRight = xMove > xDown;
-                    boolean isSwipingLeft = xMove < xDown;
+                    final boolean isSwipingRight = xMove > xDown;
+                    final boolean isSwipingLeft = xMove < xDown;
+
                     if (isSwipingRight) {
                         swipeListener.onSwipingRight(event);
                     }
@@ -88,8 +73,9 @@ public class SwipeDetector {
                 }
 
                 if (isSwipingVertically) {
-                    boolean isSwipingDown = yDown < yMove;
-                    boolean isSwipingUp = yDown > yMove;
+                    final boolean isSwipingDown = yDown < yMove;
+                    final boolean isSwipingUp = yDown > yMove;
+
                     if (isSwipingDown) {
                         swipeListener.onSwipingDown(event);
                     }
