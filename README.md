@@ -1,5 +1,5 @@
-swipes
-=============
+swipe
+=====
 
 Detects swipe events on Android.
 
