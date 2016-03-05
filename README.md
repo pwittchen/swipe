@@ -5,7 +5,7 @@ Detects swipe events on Android.
 
 ![swipe gestures](art/swipe.png)
 
-Documentation and samples will be provided later.
+More documentation and samples will be provided later.
 
 Contents
 --------
