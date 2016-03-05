@@ -44,6 +44,8 @@ public class Swipes {
       case MotionEvent.ACTION_MOVE:   // user is moving finger on the screen
         onActionMove(event);
         break;
+      default:
+        break;
     }
   }
 
