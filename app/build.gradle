@@ -21,5 +21,7 @@ android {
 
 dependencies {
     compile project(':library')
+    compile 'io.reactivex:rxjava:1.1.1'
+    compile 'io.reactivex:rxandroid:1.1.0'
     compile 'com.android.support:appcompat-v7:23.1.1'
 }

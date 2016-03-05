@@ -19,5 +19,6 @@ android {
 }
 
 dependencies {
+  compile 'io.reactivex:rxjava:1.1.1'
   testCompile 'junit:junit:4.12'
 }
