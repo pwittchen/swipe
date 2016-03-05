@@ -10,6 +10,12 @@ Documentation and samples will be provided later.
 Usage
 -----
 
+### Usage with listener
+
+TBD.
+
+### Usage with RxJava
+
 TBD.
 
 Examples
