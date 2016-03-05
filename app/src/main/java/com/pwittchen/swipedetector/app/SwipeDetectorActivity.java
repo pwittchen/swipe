@@ -1,9 +1,11 @@
-package pwittchen.com.swipedetector;
+package com.pwittchen.swipedetector.app;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.widget.TextView;
+import com.github.pwittchen.swipedetector.library.SwipeDetector;
+import pwittchen.com.swipedetector.R;
 
 public class SwipeDetectorActivity extends AppCompatActivity {
 

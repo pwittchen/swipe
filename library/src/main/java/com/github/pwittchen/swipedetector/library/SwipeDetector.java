@@ -1,6 +1,5 @@
-package pwittchen.com.swipedetector;
+package com.github.pwittchen.swipedetector.library;
 
-import android.support.annotation.NonNull;
 import android.view.MotionEvent;
 
 public class SwipeDetector {
@@ -34,7 +33,7 @@ public class SwipeDetector {
         void onSwipedDown(MotionEvent event);
     }
 
-    public SwipeDetector(@NonNull SwipeListener swipeListener) {
+    public SwipeDetector(SwipeListener swipeListener) {
         this.swipeListener = swipeListener;
     }
 
