@@ -11,4 +11,4 @@ References
 ----------
 
 - [better gesture detector project](https://github.com/Polidea/better-gesture-detector)
-- [detecting swipe gesture in mobile application](http://blog.wittchen.biz.pl/detecting-swipe-gesture-in-mobile-application/).
+- [detecting swipe gesture in mobile application](http://blog.wittchen.biz.pl/detecting-swipe-gesture-in-mobile-application/)
