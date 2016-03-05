@@ -34,7 +34,7 @@ TBD.
 Example
 -------
 
-TBD.
+Exemplary application is located in `app` directory of this repository.
 
 Download
 --------
