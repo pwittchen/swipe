@@ -1,14 +1,13 @@
-package com.github.pwittchen.swipedetector.library;
+package com.github.pwittchen.swipes.library;
 
 import android.view.MotionEvent;
 import rx.Observable;
 import rx.Subscriber;
 
-public class SwipeDetector {
+public class Swipes {
 
   private SwipeListener swipeListener;
   private Subscriber<? super SwipeEvent> subscriber;
-  private final boolean listenerOverridden;
   /**
    * Threshold is added for neglecting swiping
    * when differences between changed x or y coordinates are too small
@@ -19,17 +18,22 @@ public class SwipeDetector {
   private float yDown, yUp;
   private float xMove, yMove;
 
-  public SwipeDetector() {
-    this.swipeListener = createReactiveSwipeListener();
-    this.listenerOverridden = false;
+  public void addListener(SwipeListener swipeListener) {
+    checkNotNull(swipeListener, "swipeListener == null");
+    this.swipeListener = swipeListener;
   }
 
-  public SwipeDetector(final SwipeListener swipeListener) {
-    this.swipeListener = swipeListener;
-    this.listenerOverridden = true;
+  public Observable<SwipeEvent> observe() {
+    this.swipeListener = createReactiveSwipeListener();
+    return Observable.create(new Observable.OnSubscribe<SwipeEvent>() {
+      @Override public void call(final Subscriber<? super SwipeEvent> subscriber) {
+        Swipes.this.subscriber = subscriber;
+      }
+    });
   }
 
   public void onTouchEvent(final MotionEvent event) {
+    checkNotNull(event, "event == null");
     switch (event.getAction()) {
       case MotionEvent.ACTION_DOWN:   // user started touching the screen
         onActionDown(event);
@@ -109,18 +113,6 @@ public class SwipeDetector {
     }
   }
 
-  public Observable<SwipeEvent> observeSwipes() {
-    if (listenerOverridden) {
-      throw new IllegalStateException("Listener overridden! Use constructor without parameters.");
-    }
-
-    return Observable.create(new Observable.OnSubscribe<SwipeEvent>() {
-      @Override public void call(final Subscriber<? super SwipeEvent> subscriber) {
-        SwipeDetector.this.subscriber = subscriber;
-      }
-    });
-  }
-
   private SwipeListener createReactiveSwipeListener() {
     return new SwipeListener() {
       @Override public void onSwipingLeft(MotionEvent event) {
@@ -160,6 +152,12 @@ public class SwipeDetector {
   private void onNextSafely(final SwipeEvent swipingLeft) {
     if (subscriber != null) {
       subscriber.onNext(swipingLeft);
+    }
+  }
+
+  private void checkNotNull(final Object object, final String message) {
+    if (object == null) {
+      throw new IllegalArgumentException(message);
     }
   }
 }

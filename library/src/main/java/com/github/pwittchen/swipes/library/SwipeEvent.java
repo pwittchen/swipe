@@ -1,4 +1,4 @@
-package com.github.pwittchen.swipedetector.library;
+package com.github.pwittchen.swipes.library;
 
 public enum SwipeEvent {
   SWIPING_LEFT,

@@ -1,4 +1,4 @@
-package com.github.pwittchen.swipedetector.library;
+package com.github.pwittchen.swipes.library;
 
 import android.view.MotionEvent;
 
