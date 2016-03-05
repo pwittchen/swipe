@@ -1,4 +1,4 @@
-package com.pwittchen.swipedetector.app;
+package com.github.pwittchen.swipedetector.app;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
