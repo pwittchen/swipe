@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Swipe app</string>
-    <string name="listener">Listener</string>
-    <string name="rx">Rx</string>
-    <string name="hello_swipe_detector">Swipe on the screen!</string>
-</resources>
