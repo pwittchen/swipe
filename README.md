@@ -135,7 +135,23 @@ If you would like to know, how to use this library with Kotlin, check `app-kotli
 Download
 --------
 
-TDB.
+You can depend on the library through Maven:
+
+```xml
+<dependency>
+    <groupId>com.github.pwittchen</groupId>
+    <artifactId>swipe</artifactId>
+    <version>0.0.1</version>
+</dependency>
+```
+
+or through Gradle:
+
+```groovy
+dependencies {
+  compile 'com.github.pwittchen:swipe:0.0.1'
+}
+```
 
 Tests
 -----
