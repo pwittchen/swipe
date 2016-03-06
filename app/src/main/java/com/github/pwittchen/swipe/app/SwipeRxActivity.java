@@ -56,6 +56,10 @@ public class SwipeRxActivity extends AppCompatActivity {
 
   @Override protected void onPause() {
     super.onPause();
+    safelyUnsubscribe(subscription);
+  }
+
+  private void safelyUnsubscribe(Subscription subscription) {
     if (subscription != null && !subscription.isUnsubscribed()) {
       subscription.unsubscribe();
     }

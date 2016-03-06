@@ -44,17 +44,18 @@ class SwipeRxActivity : AppCompatActivity() {
   }
 
   override fun dispatchTouchEvent(event: MotionEvent): Boolean {
-    if ( swipe != null) {
-      (swipe as Swipe).dispatchTouchEvent(event)
-    }
+    (swipe as Swipe).dispatchTouchEvent(event)
     return super.dispatchTouchEvent(event)
   }
 
   override fun onPause() {
     super.onPause()
-    val subscriptionCast = subscription as Subscription
-    if (subscriptionCast != null && !subscriptionCast.isUnsubscribed) {
-      subscriptionCast.unsubscribe()
+    safelyUnsubscribe(subscription as Subscription);
+  }
+
+  fun safelyUnsubscribe(subscription: Subscription) {
+    if (subscription != null && !subscription.isUnsubscribed) {
+      subscription.unsubscribe()
     }
   }
 

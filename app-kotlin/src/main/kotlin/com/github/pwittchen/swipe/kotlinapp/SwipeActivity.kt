@@ -69,9 +69,7 @@ class SwipeActivity : AppCompatActivity() {
   }
 
   override fun dispatchTouchEvent(event: MotionEvent): Boolean {
-    if (swipe != null) {
-      (swipe as Swipe).dispatchTouchEvent(event)
-    }
+    (swipe as Swipe).dispatchTouchEvent(event)
     return super.dispatchTouchEvent(event)
   }
 
