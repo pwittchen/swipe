@@ -25,11 +25,105 @@ Usage
 
 ### Listener
 
-TBD.
+**Step 1**: Create `Swipe` attribute in the `Activiy`:
+
+```java
+private Swipe swipe;
+```
+
+**Step 2**: Initialize `Swipe` object and add listener:
+
+```java
+@Override protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(savedInstanceState);
+  
+  setContentView(R.layout.activity_main);
+  info = (TextView) findViewById(R.id.info);
+  
+  swipe = new Swipe();
+  swipe.addListener(new SwipeListener() {
+    @Override public void onSwipingLeft(final MotionEvent event) {
+      info.setText("SWIPING_LEFT");
+    }
+
+    @Override public void onSwipedLeft(final MotionEvent event) {
+      info.setText("SWIPED_LEFT");
+    }
+
+    @Override public void onSwipingRight(final MotionEvent event) {
+      info.setText("SWIPING_RIGHT");
+    }
+
+    @Override public void onSwipedRight(final MotionEvent event) {
+      info.setText("SWIPED_RIGHT");
+    }
+
+    @Override public void onSwipingUp(final MotionEvent event) {
+      info.setText("SWIPING_UP");
+    }
+
+    @Override public void onSwipedUp(final MotionEvent event) {
+      info.setText("SWIPED_UP");
+    }
+
+    @Override public void onSwipingDown(final MotionEvent event) {
+      info.setText("SWIPING_DOWN");
+    }
+
+    @Override public void onSwipedDown(final MotionEvent event) {
+      info.setText("SWIPED_DOWN");
+    }
+  });
+}
+```
+
+**Step 3**: override `dispatchTouchEvent(MotionEvent event)`:
+
+```java
+@Override public boolean dispatchTouchEvent(MotionEvent event) {
+  swipe.dispatchTouchEvent(event);
+  return super.dispatchTouchEvent(event);
+}
+```
 
 ### RxJava
 
-TBD.
+**Step 1**: Create `Swipe` attribute and `Subscription` in the `Activiy`:
+
+```java
+private Swipe swipe;
+private Subscription subscription;
+```
+
+**Step 2**: Initialize `Swipe` object and subscribe `Observable`:
+
+```java
+@Override protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  info = (TextView) findViewById(R.id.info);
+  
+  swipe = new Swipe();
+  
+  subscription = swipe.observe()
+      .subscribeOn(Schedulers.computation())
+      .observeOn(AndroidSchedulers.mainThread())
+      .subscribe(new Action1<SwipeEvent>() {
+        @Override public void call(final SwipeEvent swipeEvent) {
+          info.setText(swipeEvent.toString());
+        }
+      });
+}
+```
+
+**Step 3**: override `dispatchTouchEvent(MotionEvent event)`:
+
+```java
+@Override public boolean dispatchTouchEvent(MotionEvent event) {
+  swipe.dispatchTouchEvent(event);
+  return super.dispatchTouchEvent(event);
+}
+```
 
 Example
 -------
