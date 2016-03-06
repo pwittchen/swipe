@@ -1,0 +1,21 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.github.pwittchen.swipe.kotlinapp">
+
+  <application
+      android:allowBackup="true"
+      android:label="@string/app_name"
+      android:theme="@style/AppTheme">
+    <activity
+        android:label="@string/listener"
+        android:name="com.github.pwittchen.swipe.kotlinapp.SwipeActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <activity
+        android:label="@string/rx"
+        android:name="com.github.pwittchen.swipe.kotlinapp.SwipeRxActivity"/>
+  </application>
+
+</manifest>
