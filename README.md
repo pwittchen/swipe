@@ -1,4 +1,4 @@
-swipe [![Build Status](https://travis-ci.org/pwittchen/swipe.svg?branch=master)](https://travis-ci.org/pwittchen/swipe)
+swipe [![Build Status](https://travis-ci.org/pwittchen/swipe.svg?branch=master)](https://travis-ci.org/pwittchen/swipe) ![Maven Central](https://img.shields.io/maven-central/v/com.github.pwittchen/swipe.svg?style=flat)
 =====
 
 detects swipe events on Android with listener and RxJava Observable
