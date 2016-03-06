@@ -5,8 +5,6 @@ detects swipe events on Android with listener and RxJava Observable
 
 ![swipe gestures](art/swipe.png)
 
-More documentation and samples will be provided later.
-
 Contents
 --------
 - [Usage](#usage)
