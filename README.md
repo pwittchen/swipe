@@ -3,6 +3,8 @@ swipe [![Build Status](https://travis-ci.org/pwittchen/swipe.svg?branch=master)]
 
 detects swipe events on Android with listener and RxJava Observable
 
+JavaDoc is available at: http://pwittchen.github.io/swipe/
+
 ![swipe gestures](art/swipe.png)
 
 Contents
