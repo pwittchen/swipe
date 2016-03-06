@@ -1,7 +1,7 @@
 swipe [![Build Status](https://travis-ci.org/pwittchen/swipe.svg?branch=master)](https://travis-ci.org/pwittchen/swipe)
 =====
 
-Detects swipe events on Android.
+detects swipe events on Android with listener and RxJava Observable
 
 ![swipe gestures](art/swipe.png)
 
