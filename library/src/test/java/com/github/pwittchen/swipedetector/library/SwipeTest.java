@@ -1,3 +1,18 @@
+/*
+ * Copyright (C) 2016 Piotr Wittchen
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.github.pwittchen.swipedetector.library;
 
 import android.view.MotionEvent;
@@ -59,6 +74,16 @@ import static org.mockito.Mockito.when;
     });
   }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldThrowAnExceptionWhenListenerIsNull() {
+    swipe.addListener(null);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldThrowAnExceptionWhenMotionEventIsNull() {
+    swipe.dispatchTouchEvent(null);
+  }
+
   @Test public void shouldSwipingRight() throws Exception {
     simulateSwipingHorizontally(swipe.SWIPING_THRESHOLD + MIN_MOTION_CHANGE);
     assertThat(swipeEvent).isEqualTo(SwipeEvent.SWIPING_RIGHT);
@@ -84,8 +109,8 @@ import static org.mockito.Mockito.when;
     when(motionEventMove.getY()).thenReturn(yMove);
 
     // when
-    swipe.onTouchEvent(motionEventDown); // simulate beginning of touching the screen
-    swipe.onTouchEvent(motionEventMove); // simulate finger move on the screen
+    swipe.dispatchTouchEvent(motionEventDown); // simulate beginning of touching the screen
+    swipe.dispatchTouchEvent(motionEventMove); // simulate finger move on the screen
 
     // then perform assertion in a concrete test
   }
@@ -115,8 +140,8 @@ import static org.mockito.Mockito.when;
     when(motionEventMove.getY()).thenReturn(yMove);
 
     // when
-    swipe.onTouchEvent(motionEventDown); // simulate beginning of touching the screen
-    swipe.onTouchEvent(motionEventMove); // simulate finger move on the screen
+    swipe.dispatchTouchEvent(motionEventDown); // simulate beginning of touching the screen
+    swipe.dispatchTouchEvent(motionEventMove); // simulate finger move on the screen
 
     // then perform assertion in a concrete test
   }
@@ -146,8 +171,9 @@ import static org.mockito.Mockito.when;
     when(motionEventUp.getY()).thenReturn(yUp);
 
     // when
-    swipe.onTouchEvent(motionEventDown);  // simulate beginning of touching the screen
-    swipe.onTouchEvent(motionEventUp);    // simulate finger moved and stopped touching the screen
+    swipe.dispatchTouchEvent(motionEventDown);  // simulate beginning of touching the screen
+    swipe.dispatchTouchEvent(
+        motionEventUp);    // simulate finger moved and stopped touching the screen
 
     // then perform assertion in a concrete test
   }
@@ -177,8 +203,9 @@ import static org.mockito.Mockito.when;
     when(motionEventUp.getY()).thenReturn(yUp);
 
     // when
-    swipe.onTouchEvent(motionEventDown);  // simulate beginning of touching the screen
-    swipe.onTouchEvent(motionEventUp);    // simulate finger moved and stopped touching the screen
+    swipe.dispatchTouchEvent(motionEventDown);  // simulate beginning of touching the screen
+    swipe.dispatchTouchEvent(
+        motionEventUp);    // simulate finger moved and stopped touching the screen
 
     // then perform assertion in a concrete test
   }

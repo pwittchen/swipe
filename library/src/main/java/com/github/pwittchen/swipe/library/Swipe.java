@@ -1,16 +1,38 @@
+/*
+ * Copyright (C) 2016 Piotr Wittchen
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.github.pwittchen.swipe.library;
 
 import android.view.MotionEvent;
 import rx.Observable;
 import rx.Subscriber;
 
+/**
+ * Allows to detect swipe events through listener or with RxJava Observables
+ */
 public class Swipe {
 
   /**
-   * Threshold is added for neglecting swiping
+   * Swiping threshold is added for neglecting swiping
    * when differences between changed x or y coordinates are too small
    */
   public final static int SWIPING_THRESHOLD = 20;
+  /**
+   * Swiped threshold is added for neglecting swiping
+   * when differences between changed x or y coordinates are too small
+   */
   public final static int SWIPED_THRESHOLD = 100;
   private SwipeListener swipeListener;
   private Subscriber<? super SwipeEvent> subscriber;
@@ -18,11 +40,21 @@ public class Swipe {
   private float yDown, yUp;
   private float xMove, yMove;
 
+  /**
+   * Adds listener for swipe events.
+   * Remember to call {@link #dispatchTouchEvent(MotionEvent) dispatchTouchEvent} method as well.
+   * @param swipeListener listener
+   */
   public void addListener(SwipeListener swipeListener) {
     checkNotNull(swipeListener, "swipeListener == null");
     this.swipeListener = swipeListener;
   }
 
+  /**
+   * Observes swipe events with RxJava Observable.
+   * Remember to call {@link #dispatchTouchEvent(MotionEvent) dispatchTouchEvent} method as well.
+   * @return Observable<SwipeEvent> observable with stream of swipe events
+   */
   public Observable<SwipeEvent> observe() {
     this.swipeListener = createReactiveSwipeListener();
     return Observable.create(new Observable.OnSubscribe<SwipeEvent>() {
@@ -32,7 +64,11 @@ public class Swipe {
     });
   }
 
-  public void onTouchEvent(final MotionEvent event) {
+  /**
+   * Called to process touch screen events.
+   * @param event MotionEvent
+   */
+  public void dispatchTouchEvent(final MotionEvent event) {
     checkNotNull(event, "event == null");
     switch (event.getAction()) {
       case MotionEvent.ACTION_DOWN: // user started touching the screen
