@@ -6,14 +6,14 @@ import rx.Subscriber;
 
 public class Swipe {
 
-  private SwipeListener swipeListener;
-  private Subscriber<? super SwipeEvent> subscriber;
   /**
    * Threshold is added for neglecting swiping
    * when differences between changed x or y coordinates are too small
    */
-  private final static int SWIPING_THRESHOLD = 20;
-  private final static int SWIPED_THRESHOLD = 100;
+  public final static int SWIPING_THRESHOLD = 20;
+  public final static int SWIPED_THRESHOLD = 100;
+  private SwipeListener swipeListener;
+  private Subscriber<? super SwipeEvent> subscriber;
   private float xDown, xUp;
   private float yDown, yUp;
   private float xMove, yMove;
@@ -35,13 +35,13 @@ public class Swipe {
   public void onTouchEvent(final MotionEvent event) {
     checkNotNull(event, "event == null");
     switch (event.getAction()) {
-      case MotionEvent.ACTION_DOWN:   // user started touching the screen
+      case MotionEvent.ACTION_DOWN: // user started touching the screen
         onActionDown(event);
         break;
-      case MotionEvent.ACTION_UP:     // user stopped touching the screen
+      case MotionEvent.ACTION_UP:   // user stopped touching the screen
         onActionUp(event);
         break;
-      case MotionEvent.ACTION_MOVE:   // user is moving finger on the screen
+      case MotionEvent.ACTION_MOVE: // user is moving finger on the screen
         onActionMove(event);
         break;
       default:
