@@ -171,9 +171,8 @@ import static org.mockito.Mockito.when;
     when(motionEventUp.getY()).thenReturn(yUp);
 
     // when
-    swipe.dispatchTouchEvent(motionEventDown);  // simulate beginning of touching the screen
-    swipe.dispatchTouchEvent(
-        motionEventUp);    // simulate finger moved and stopped touching the screen
+    swipe.dispatchTouchEvent(motionEventDown); // simulate beginning of touching the screen
+    swipe.dispatchTouchEvent(motionEventUp);   // simulate finger moved and stopped touching screen
 
     // then perform assertion in a concrete test
   }
@@ -204,8 +203,7 @@ import static org.mockito.Mockito.when;
 
     // when
     swipe.dispatchTouchEvent(motionEventDown);  // simulate beginning of touching the screen
-    swipe.dispatchTouchEvent(
-        motionEventUp);    // simulate finger moved and stopped touching the screen
+    swipe.dispatchTouchEvent(motionEventUp);    // simulate finger moved and stopped touching screen
 
     // then perform assertion in a concrete test
   }
