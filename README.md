@@ -1,4 +1,4 @@
-swipe
+swipe [![Build Status](https://travis-ci.org/pwittchen/swipe.svg?branch=master)](https://travis-ci.org/pwittchen/swipe)
 =====
 
 Detects swipe events on Android.
