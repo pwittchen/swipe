@@ -132,6 +132,10 @@ Exemplary application is located in `app` directory of this repository.
 
 If you would like to know, how to use this library with Kotlin, check `app-kotlin` directory in this repository.
 
+Below, you can see an animation presenting how sample application works.
+
+![swipe gestures](art/swipe-animation.gif)
+
 Download
 --------
 
