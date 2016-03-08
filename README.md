@@ -7,6 +7,8 @@ JavaDoc is available at: http://pwittchen.github.io/swipe/
 
 ![swipe gestures](art/swipe.png)
 
+Check out an exemplary **[animation](#example)**!
+
 Contents
 --------
 - [Usage](#usage)
