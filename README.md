@@ -12,8 +12,8 @@ Check out an exemplary **[animation](#example)**!
 Contents
 --------
 - [Usage](#usage)
-  - [Listener](#listener)
-  - [RxJava](#rxjava)
+  - [Imperative way - Listener](#imperative-way-listener)
+  - [Reactive way - RxJava](#reactive-way-rxjava)
 - [Example](#example)
 - [Download](#download)
 - [Tests](#tests)
@@ -25,7 +25,7 @@ Contents
 Usage
 -----
 
-### Listener
+### Imperative way - Listener
 
 **Step 1**: Create `Swipe` attribute in the `Activiy`:
 
@@ -88,7 +88,7 @@ private Swipe swipe;
 }
 ```
 
-### RxJava
+### Reactive way - RxJava
 
 **Step 1**: Create `Swipe` attribute and `Subscription` in the `Activiy`:
 
