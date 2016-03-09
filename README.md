@@ -12,8 +12,8 @@ Check out an exemplary **[animation](#example)**!
 Contents
 --------
 - [Usage](#usage)
-  - [Imperative way - Listener](#imperative-way-listener)
-  - [Reactive way - RxJava](#reactive-way-rxjava)
+  - [Imperative way - Listener](#imperative-way---listener)
+  - [Reactive way - RxJava](#reactive-way---rxjava)
 - [Example](#example)
 - [Download](#download)
 - [Tests](#tests)
