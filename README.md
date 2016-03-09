@@ -127,6 +127,17 @@ private Subscription subscription;
 }
 ```
 
+**Step 4**: unsubscribe previously created `Subscription` when it's no longer needed:
+
+```java
+@Override protected void onPause() {
+  super.onPause();
+  if (subscription != null && !subscription.isUnsubscribed()) {
+    subscription.unsubscribe();
+  }
+}
+```
+
 Example
 -------
 
