@@ -16,9 +16,6 @@
 package com.github.pwittchen.swipe.library;
 
 import android.view.MotionEvent;
-import com.github.pwittchen.swipe.library.Swipe;
-import com.github.pwittchen.swipe.library.SwipeEvent;
-import com.github.pwittchen.swipe.library.SwipeListener;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
