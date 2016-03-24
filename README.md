@@ -118,6 +118,21 @@ private Subscription subscription;
 }
 ```
 
+`SwipeEvent` is an enum with the following values:
+
+```java
+public enum SwipeEvent {
+  SWIPING_LEFT,
+  SWIPED_LEFT,
+  SWIPING_RIGHT,
+  SWIPED_RIGHT,
+  SWIPING_UP,
+  SWIPED_UP,
+  SWIPING_DOWN,
+  SWIPED_DOWN
+}
+```
+
 **Step 3**: override `dispatchTouchEvent(MotionEvent event)`:
 
 ```java
