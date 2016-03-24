@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.pwittchen.swipedetector.library;
+package com.github.pwittchen.swipe.library;
 
 import android.view.MotionEvent;
 import com.github.pwittchen.swipe.library.Swipe;
