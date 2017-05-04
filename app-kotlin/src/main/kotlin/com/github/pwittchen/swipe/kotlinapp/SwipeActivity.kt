@@ -33,7 +33,7 @@ class SwipeActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
     swipe = Swipe()
-    (swipe as Swipe).addListener(object : SwipeListener {
+    (swipe as Swipe).setListener(object : SwipeListener {
       override fun onSwipingLeft(event: MotionEvent) {
         info.text = "SWIPING_LEFT"
       }

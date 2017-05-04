@@ -45,7 +45,7 @@ public class Swipe {
    * Remember to call {@link #dispatchTouchEvent(MotionEvent) dispatchTouchEvent} method as well.
    * @param swipeListener listener
    */
-  public void addListener(SwipeListener swipeListener) {
+  public void setListener(SwipeListener swipeListener) {
     checkNotNull(swipeListener, "swipeListener == null");
     this.swipeListener = swipeListener;
   }

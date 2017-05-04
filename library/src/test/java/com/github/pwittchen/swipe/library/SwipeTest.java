@@ -36,7 +36,7 @@ import static org.mockito.Mockito.when;
 
   @Before public void setUp() {
     swipe = new Swipe();
-    swipe.addListener(new SwipeListener() {
+    swipe.setListener(new SwipeListener() {
       @Override public void onSwipingLeft(MotionEvent event) {
         swipeEvent = SwipeEvent.SWIPING_LEFT;
       }
@@ -73,7 +73,7 @@ import static org.mockito.Mockito.when;
 
   @Test(expected = IllegalArgumentException.class)
   public void shouldThrowAnExceptionWhenListenerIsNull() {
-    swipe.addListener(null);
+    swipe.setListener(null);
   }
 
   @Test(expected = IllegalArgumentException.class)

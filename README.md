@@ -33,7 +33,7 @@ Usage
 private Swipe swipe;
 ```
 
-**Step 2**: Initialize `Swipe` object and add listener:
+**Step 2**: Initialize `Swipe` object and set listener:
 
 ```java
 @Override protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ private Swipe swipe;
   info = (TextView) findViewById(R.id.info);
   
   swipe = new Swipe();
-  swipe.addListener(new SwipeListener() {
+  swipe.setListener(new SwipeListener() {
     @Override public void onSwipingLeft(final MotionEvent event) {
       info.setText("SWIPING_LEFT");
     }

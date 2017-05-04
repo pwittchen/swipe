@@ -36,7 +36,7 @@ public class SwipeActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
     info = (TextView) findViewById(R.id.info);
     swipe = new Swipe();
-    swipe.addListener(new SwipeListener() {
+    swipe.setListener(new SwipeListener() {
       @Override public void onSwipingLeft(final MotionEvent event) {
         info.setText("SWIPING_LEFT");
       }
