@@ -20,7 +20,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.when;
@@ -82,12 +82,12 @@ import static org.mockito.Mockito.when;
   }
 
   @Test public void shouldSwipingRight() throws Exception {
-    simulateSwipingHorizontally(swipe.SWIPING_THRESHOLD + MIN_MOTION_CHANGE);
+    simulateSwipingHorizontally(swipe.getSwipingThreshold() + MIN_MOTION_CHANGE);
     assertThat(swipeEvent).isEqualTo(SwipeEvent.SWIPING_RIGHT);
   }
 
   @Test public void shouldSwipingLeft() throws Exception {
-    simulateSwipingHorizontally(-swipe.SWIPING_THRESHOLD - MIN_MOTION_CHANGE);
+    simulateSwipingHorizontally(-swipe.getSwipingThreshold() - MIN_MOTION_CHANGE);
     assertThat(swipeEvent).isEqualTo(SwipeEvent.SWIPING_LEFT);
   }
 
@@ -113,12 +113,12 @@ import static org.mockito.Mockito.when;
   }
 
   @Test public void shouldSwipingDown() throws Exception {
-    simulateSwipingVertically(swipe.SWIPING_THRESHOLD + MIN_MOTION_CHANGE);
+    simulateSwipingVertically(swipe.getSwipingThreshold() + MIN_MOTION_CHANGE);
     assertThat(swipeEvent).isEqualTo(SwipeEvent.SWIPING_DOWN);
   }
 
   @Test public void shouldSwipingUp() throws Exception {
-    simulateSwipingVertically(-swipe.SWIPING_THRESHOLD - MIN_MOTION_CHANGE);
+    simulateSwipingVertically(-swipe.getSwipingThreshold() - MIN_MOTION_CHANGE);
     assertThat(swipeEvent).isEqualTo(SwipeEvent.SWIPING_UP);
   }
 
@@ -144,12 +144,12 @@ import static org.mockito.Mockito.when;
   }
 
   @Test public void shouldSwipedRight() {
-    simulateSwipedHorizontally(swipe.SWIPED_THRESHOLD + MIN_MOTION_CHANGE);
+    simulateSwipedHorizontally(swipe.getSwipedThreshold() + MIN_MOTION_CHANGE);
     assertThat(swipeEvent).isEqualTo(SwipeEvent.SWIPED_RIGHT);
   }
 
   @Test public void shouldSwipedLeft() {
-    simulateSwipedHorizontally(-swipe.SWIPED_THRESHOLD - MIN_MOTION_CHANGE);
+    simulateSwipedHorizontally(-swipe.getSwipedThreshold() - MIN_MOTION_CHANGE);
     assertThat(swipeEvent).isEqualTo(SwipeEvent.SWIPED_LEFT);
   }
 
@@ -175,12 +175,12 @@ import static org.mockito.Mockito.when;
   }
 
   @Test public void shouldSwipedDown() {
-    simulateSwipedVertically(swipe.SWIPED_THRESHOLD + MIN_MOTION_CHANGE);
+    simulateSwipedVertically(swipe.getSwipedThreshold() + MIN_MOTION_CHANGE);
     assertThat(swipeEvent).isEqualTo(SwipeEvent.SWIPED_DOWN);
   }
 
   @Test public void shouldSwipedUp() {
-    simulateSwipedVertically(-swipe.SWIPED_THRESHOLD - MIN_MOTION_CHANGE);
+    simulateSwipedVertically(-swipe.getSwipedThreshold() - MIN_MOTION_CHANGE);
     assertThat(swipeEvent).isEqualTo(SwipeEvent.SWIPED_UP);
   }
 
