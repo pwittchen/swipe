@@ -14,6 +14,7 @@ Contents
 - [Usage](#usage)
   - [Imperative way - Listener](#imperative-way---listener)
   - [Reactive way - RxJava](#reactive-way---rxjava)
+- [Configuring swipe threshold](#configuring-swipe-threshold)
 - [Example](#example)
 - [Download](#download)
 - [Tests](#tests)
@@ -27,7 +28,7 @@ Usage
 
 ### Imperative way - Listener
 
-**Step 1**: Create `Swipe` attribute in the `Activiy`:
+**Step 1**: Create `Swipe` attribute in the `Activity`:
 
 ```java
 private Swipe swipe;
@@ -152,6 +153,20 @@ public enum SwipeEvent {
   }
 }
 ```
+
+Configuring swipe threshold
+---------------------------
+
+If you want to configure swipe threshold to adjust swipe sensitivity, you can use the following constructor:
+
+```java
+Swipe(int swipingThreshold, int swipedThreshold)
+```
+
+Default `swipingThreshold` is equal to `20` and default `swipedThreshold` is equal to `100`.
+In the case of using `Swipe()` constructor, these values are set.
+Decreasing these values will increase swiping and swiped events sensitivity.
+We can adjust them manually for our needs.
 
 Example
 -------

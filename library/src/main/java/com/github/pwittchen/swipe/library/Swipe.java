@@ -28,21 +28,35 @@ public class Swipe {
    * Swiping threshold is added for neglecting swiping
    * when differences between changed x or y coordinates are too small
    */
-  public final static int SWIPING_THRESHOLD = 20;
+  public final static int DEFAULT_SWIPING_THRESHOLD = 20;
   /**
    * Swiped threshold is added for neglecting swiping
    * when differences between changed x or y coordinates are too small
    */
-  public final static int SWIPED_THRESHOLD = 100;
+  public final static int DEFAULT_SWIPED_THRESHOLD = 100;
+
+  private final int swipingThreshold;
+  private final int swipedThreshold;
+
   private SwipeListener swipeListener;
   private Subscriber<? super SwipeEvent> subscriber;
   private float xDown, xUp;
   private float yDown, yUp;
   private float xMove, yMove;
 
+  public Swipe() {
+    this(DEFAULT_SWIPING_THRESHOLD, DEFAULT_SWIPED_THRESHOLD);
+  }
+
+  public Swipe(int swipingThreshold, int swipedThreshold) {
+    this.swipingThreshold = swipingThreshold;
+    this.swipedThreshold = swipedThreshold;
+  }
+
   /**
    * Adds listener for swipe events.
    * Remember to call {@link #dispatchTouchEvent(MotionEvent) dispatchTouchEvent} method as well.
+   *
    * @param swipeListener listener
    */
   public void setListener(SwipeListener swipeListener) {
@@ -53,11 +67,12 @@ public class Swipe {
   /**
    * Observes swipe events with RxJava Observable.
    * Remember to call {@link #dispatchTouchEvent(MotionEvent) dispatchTouchEvent} method as well.
+   *
    * @return Observable<SwipeEvent> observable with stream of swipe events
    */
   public Observable<SwipeEvent> observe() {
     this.swipeListener = createReactiveSwipeListener();
-    return Observable.create(new Observable.OnSubscribe<SwipeEvent>() {
+    return Observable.unsafeCreate(new Observable.OnSubscribe<SwipeEvent>() {
       @Override public void call(final Subscriber<? super SwipeEvent> subscriber) {
         Swipe.this.subscriber = subscriber;
       }
@@ -66,6 +81,7 @@ public class Swipe {
 
   /**
    * Called to process touch screen events.
+   *
    * @param event MotionEvent
    */
   public void dispatchTouchEvent(final MotionEvent event) {
@@ -93,8 +109,8 @@ public class Swipe {
   private void onActionUp(final MotionEvent event) {
     xUp = event.getX();
     yUp = event.getY();
-    final boolean swipedHorizontally = Math.abs(xUp - xDown) > SWIPED_THRESHOLD;
-    final boolean swipedVertically = Math.abs(yUp - yDown) > SWIPED_THRESHOLD;
+    final boolean swipedHorizontally = Math.abs(xUp - xDown) > getSwipedThreshold();
+    final boolean swipedVertically = Math.abs(yUp - yDown) > getSwipedThreshold();
 
     if (swipedHorizontally) {
       final boolean swipedRight = xUp > xDown;
@@ -123,8 +139,8 @@ public class Swipe {
   private void onActionMove(final MotionEvent event) {
     xMove = event.getX();
     yMove = event.getY();
-    final boolean isSwipingHorizontally = Math.abs(xMove - xDown) > SWIPING_THRESHOLD;
-    final boolean isSwipingVertically = Math.abs(yMove - yDown) > SWIPING_THRESHOLD;
+    final boolean isSwipingHorizontally = Math.abs(xMove - xDown) > getSwipingThreshold();
+    final boolean isSwipingVertically = Math.abs(yMove - yDown) > getSwipingThreshold();
 
     if (isSwipingHorizontally) {
       final boolean isSwipingRight = xMove > xDown;
@@ -197,5 +213,13 @@ public class Swipe {
     if (object == null) {
       throw new IllegalArgumentException(message);
     }
+  }
+
+  public int getSwipingThreshold() {
+    return swipingThreshold;
+  }
+
+  public int getSwipedThreshold() {
+    return swipedThreshold;
   }
 }
