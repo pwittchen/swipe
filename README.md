@@ -7,7 +7,7 @@ detects swipe events on Android with listener and RxJava Observable
 
 Check out an exemplary **[animation](#example)**!
 
-JavaDoc is available at: http://pwittchen.github.io/swipe/
+JavaDoc is available at: http://pwittchen.github.io/swipe/RxJava1.x
 
 | Current Branch | Branch  | Artifact Id | Build Status  | Maven Central |
 |:--------------:|:-------:|:-----------:|:-------------:|:-------------:|
