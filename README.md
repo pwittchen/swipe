@@ -91,7 +91,7 @@ private Swipe swipe;
 
 ### Reactive way - RxJava
 
-**Step 1**: Create `Swipe` attribute and `Subscription` in the `Activiy`:
+**Step 1**: Create `Swipe` attribute and `Subscription` in the `Activity`:
 
 ```java
 private Swipe swipe;
@@ -111,11 +111,7 @@ private Subscription subscription;
   subscription = swipe.observe()
       .subscribeOn(Schedulers.computation())
       .observeOn(AndroidSchedulers.mainThread())
-      .subscribe(new Action1<SwipeEvent>() {
-        @Override public void call(final SwipeEvent swipeEvent) {
-          info.setText(swipeEvent.toString());
-        }
-      });
+      .subscribe(swipeEvent -> info.setText(swipeEvent.toString()));
 }
 ```
 
