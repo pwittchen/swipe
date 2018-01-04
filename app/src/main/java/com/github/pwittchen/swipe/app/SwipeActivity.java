@@ -22,8 +22,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.widget.TextView;
-import com.github.pwittchen.swipe.library.Swipe;
-import com.github.pwittchen.swipe.library.SwipeListener;
+import com.github.pwittchen.swipe.library.rx2.Swipe;
+import com.github.pwittchen.swipe.library.rx2.SwipeListener;
 import pwittchen.com.swipedetector.R;
 
 public class SwipeActivity extends AppCompatActivity {

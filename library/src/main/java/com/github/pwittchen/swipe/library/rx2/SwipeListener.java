@@ -13,15 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.pwittchen.swipe.library;
+package com.github.pwittchen.swipe.library.rx2;
 
-public enum SwipeEvent {
-  SWIPING_LEFT,
-  SWIPED_LEFT,
-  SWIPING_RIGHT,
-  SWIPED_RIGHT,
-  SWIPING_UP,
-  SWIPED_UP,
-  SWIPING_DOWN,
-  SWIPED_DOWN
+import android.view.MotionEvent;
+
+public interface SwipeListener {
+  void onSwipingLeft(final MotionEvent event);
+
+  void onSwipedLeft(final MotionEvent event);
+
+  void onSwipingRight(final MotionEvent event);
+
+  void onSwipedRight(final MotionEvent event);
+
+  void onSwipingUp(final MotionEvent event);
+
+  void onSwipedUp(final MotionEvent event);
+
+  void onSwipingDown(final MotionEvent event);
+
+  void onSwipedDown(final MotionEvent event);
 }

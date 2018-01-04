@@ -20,7 +20,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
-import com.github.pwittchen.swipe.library.Swipe
+import com.github.pwittchen.swipe.library.rx2.Swipe
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers.computation
