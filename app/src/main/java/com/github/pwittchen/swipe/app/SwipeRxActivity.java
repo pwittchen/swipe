@@ -22,22 +22,22 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.widget.TextView;
 import com.github.pwittchen.swipe.library.Swipe;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 import pwittchen.com.swipedetector.R;
-import rx.Subscription;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 public class SwipeRxActivity extends AppCompatActivity {
   protected TextView info;
   private Swipe swipe;
-  private Subscription subscription;
+  private Disposable disposable;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     info = (TextView) findViewById(R.id.info);
     swipe = new Swipe();
-    subscription = swipe.observe()
+    disposable = swipe.observe()
         .subscribeOn(Schedulers.computation())
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(swipeEvent -> info.setText(swipeEvent.toString()));
@@ -50,12 +50,12 @@ public class SwipeRxActivity extends AppCompatActivity {
 
   @Override protected void onPause() {
     super.onPause();
-    safelyUnsubscribe(subscription);
+    safelyUnsubscribe(disposable);
   }
 
-  private void safelyUnsubscribe(Subscription subscription) {
-    if (subscription != null && !subscription.isUnsubscribed()) {
-      subscription.unsubscribe();
+  private void safelyUnsubscribe(Disposable disposable) {
+    if (disposable != null && !disposable.isDisposed()) {
+      disposable.dispose();
     }
   }
 

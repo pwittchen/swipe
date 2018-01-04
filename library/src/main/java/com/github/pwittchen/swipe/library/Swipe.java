@@ -16,8 +16,9 @@
 package com.github.pwittchen.swipe.library;
 
 import android.view.MotionEvent;
-import rx.Observable;
-import rx.Subscriber;
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
 
 /**
  * Allows to detect swipe events through listener or with RxJava Observables
@@ -39,7 +40,7 @@ public class Swipe {
   private final int swipedThreshold;
 
   private SwipeListener swipeListener;
-  private Subscriber<? super SwipeEvent> subscriber;
+  private ObservableEmitter<SwipeEvent> emitter;
   private float xDown, xUp;
   private float yDown, yUp;
   private float xMove, yMove;
@@ -72,9 +73,15 @@ public class Swipe {
    */
   public Observable<SwipeEvent> observe() {
     this.swipeListener = createReactiveSwipeListener();
-    return Observable.unsafeCreate(new Observable.OnSubscribe<SwipeEvent>() {
-      @Override public void call(final Subscriber<? super SwipeEvent> subscriber) {
-        Swipe.this.subscriber = subscriber;
+    //return Observable.unsafeCreate(new Observable.OnSubscribe<SwipeEvent>() {
+    //  @Override public void call(final Subscriber<? super SwipeEvent> subscriber) {
+    //    Swipe.this.subscriber = subscriber;
+    //  }
+    //});
+
+    return Observable.create(new ObservableOnSubscribe<SwipeEvent>() {
+      @Override public void subscribe(ObservableEmitter<SwipeEvent> emitter) throws Exception {
+        Swipe.this.emitter = emitter;
       }
     });
   }
@@ -204,8 +211,8 @@ public class Swipe {
   }
 
   private void onNextSafely(final SwipeEvent swipingLeft) {
-    if (subscriber != null) {
-      subscriber.onNext(swipingLeft);
+    if (emitter != null) {
+      emitter.onNext(swipingLeft);
     }
   }
 

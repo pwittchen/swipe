@@ -21,22 +21,22 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
 import com.github.pwittchen.swipe.library.Swipe
-import kotlinx.android.synthetic.main.activity_main.info
-import rx.Subscription
-import rx.android.schedulers.AndroidSchedulers
-import rx.schedulers.Schedulers
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers.computation
+import kotlinx.android.synthetic.main.activity_main.*
 
 class SwipeRxActivity : AppCompatActivity() {
 
   private var swipe: Swipe? = null
-  private var subscription: Subscription? = null
+  private var subscription: Disposable? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
     swipe = Swipe()
     subscription = (swipe as Swipe).observe()
-        .subscribeOn(Schedulers.computation())
+        .subscribeOn(computation())
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe { swipeEvent ->
           info.text = swipeEvent.toString()
@@ -50,12 +50,12 @@ class SwipeRxActivity : AppCompatActivity() {
 
   override fun onPause() {
     super.onPause()
-    safelyUnsubscribe(subscription as Subscription);
+    safelyUnsubscribe(subscription as Disposable)
   }
 
-  fun safelyUnsubscribe(subscription: Subscription) {
-    if (subscription != null && !subscription.isUnsubscribed) {
-      subscription.unsubscribe()
+  fun safelyUnsubscribe(disposable: Disposable) {
+    if (disposable != null && !disposable.isDisposed) {
+      disposable.dispose()
     }
   }
 

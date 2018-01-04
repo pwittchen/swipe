@@ -28,8 +28,8 @@ android {
 
 dependencies {
   implementation project(':library')
-  implementation deps.rxjava
-  implementation deps.rxandroid
+  implementation deps.rxjava2
+  implementation deps.rxandroid2
   implementation deps.appcompatv7
   implementation deps.kotlinstdlib
 }

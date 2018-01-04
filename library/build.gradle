@@ -21,7 +21,7 @@ android {
 }
 
 dependencies {
-  api deps.rxjava
+  api deps.rxjava2
   testImplementation deps.junit
   testImplementation deps.truth
   testImplementation deps.mockitocore
