@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+v. 0.2.0
+--------
+*04 Jan 2018*
+
+- migrated library to RxJava2.x as a separate artifact on a separate Git branch
+- removed `master` branch from the repo
+- updated project dependencies
+- updated Gradle to 3.x
+- added Retrolambda to sample Java app
+
 v. 0.1.0
 --------
 *04 May 2017*
