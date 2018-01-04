@@ -183,8 +183,6 @@ Below, you can see an animation presenting how sample application works.
 Download
 --------
 
-You can depend on the library through Maven:
-
 TBD.
 
 Tests
