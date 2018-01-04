@@ -111,11 +111,7 @@ private Disposable disposable;
   disposable = swipe.observe()
       .subscribeOn(Schedulers.computation())
       .observeOn(AndroidSchedulers.mainThread())
-      .subscribe(new Action1<SwipeEvent>() {
-        @Override public void call(final SwipeEvent swipeEvent) {
-          info.setText(swipeEvent.toString());
-        }
-      });
+      .subscribe(swipeEvent -> info.setText(swipeEvent.toString()));
 }
 ```
 
