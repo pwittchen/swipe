@@ -1,13 +1,18 @@
-swipe [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Swipe-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/3323) [![Build Status](https://travis-ci.org/pwittchen/swipe.svg?branch=master)](https://travis-ci.org/pwittchen/swipe) ![Maven Central](https://img.shields.io/maven-central/v/com.github.pwittchen/swipe.svg?style=flat)
+swipe [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Swipe-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/3323)
 =====
 
 detects swipe events on Android with listener and RxJava Observable
 
-JavaDoc is available at: http://pwittchen.github.io/swipe/
-
 ![swipe gestures](art/swipe.png)
 
 Check out an exemplary **[animation](#example)**!
+
+JavaDoc is available at: http://pwittchen.github.io/swipe/
+
+| Current Branch | Branch  | Artifact Id | Build Status  | Maven Central |
+|:--------------:|:-------:|:-----------:|:-------------:|:-------------:|
+| | [`RxJava1.x`](https://github.com/pwittchen/swipe/tree/RxJava1.x) | `swipe` | [![Build Status for RxJava1.x](https://travis-ci.org/pwittchen/swipe.svg?branch=RxJava1.x)](https://travis-ci.org/pwittchen/swipe) | ![Maven Central](https://img.shields.io/maven-central/v/com.github.pwittchen/swipe.svg?style=flat) |
+| :ballot_box_with_check: | [`RxJava2.x`](https://github.com/pwittchen/swipe/tree/RxJava2.x) | `swipe-rx2` | [![Build Status for RxJava2.x](https://travis-ci.org/pwittchen/swipe.svg?branch=RxJava2.x)](https://travis-ci.org/pwittchen/swipe) | ![Maven Central](https://img.shields.io/maven-central/v/com.github.pwittchen/swipe-rx2.svg?style=flat) |
 
 Contents
 --------
