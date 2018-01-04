@@ -189,7 +189,7 @@ You can depend on the library through Maven:
 <dependency>
     <groupId>com.github.pwittchen</groupId>
     <artifactId>swipe</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
 </dependency>
 ```
 
@@ -197,7 +197,7 @@ or through Gradle:
 
 ```groovy
 dependencies {
-  compile 'com.github.pwittchen:swipe:0.1.0'
+  compile 'com.github.pwittchen:swipe:0.2.0'
 }
 ```
 
