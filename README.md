@@ -91,11 +91,11 @@ private Swipe swipe;
 
 ### Reactive way - RxJava
 
-**Step 1**: Create `Swipe` attribute and `Subscription` in the `Activiy`:
+**Step 1**: Create `Swipe` attribute and `Subscription` in the `Activity`:
 
 ```java
 private Swipe swipe;
-private Subscription subscription;
+private Disposable disposable;
 ```
 
 **Step 2**: Initialize `Swipe` object and subscribe `Observable`:
@@ -108,7 +108,7 @@ private Subscription subscription;
   
   swipe = new Swipe();
   
-  subscription = swipe.observe()
+  disposable = swipe.observe()
       .subscribeOn(Schedulers.computation())
       .observeOn(AndroidSchedulers.mainThread())
       .subscribe(new Action1<SwipeEvent>() {
@@ -143,13 +143,13 @@ public enum SwipeEvent {
 }
 ```
 
-**Step 4**: unsubscribe previously created `Subscription` when it's no longer needed:
+**Step 4**: dispose previously created `Disposable` when it's no longer needed:
 
 ```java
 @Override protected void onPause() {
   super.onPause();
-  if (subscription != null && !subscription.isUnsubscribed()) {
-    subscription.unsubscribe();
+  if (disposable != null && !disposable.isDisposed()) {
+    disposable.dispose();
   }
 }
 ```
@@ -184,21 +184,7 @@ Download
 
 You can depend on the library through Maven:
 
-```xml
-<dependency>
-    <groupId>com.github.pwittchen</groupId>
-    <artifactId>swipe</artifactId>
-    <version>0.1.0</version>
-</dependency>
-```
-
-or through Gradle:
-
-```groovy
-dependencies {
-  compile 'com.github.pwittchen:swipe:0.1.0'
-}
-```
+TBD.
 
 Tests
 -----
