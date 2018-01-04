@@ -16,9 +16,6 @@
 package com.github.pwittchen.swipe.library.rx2;
 
 import android.view.MotionEvent;
-import com.github.pwittchen.swipe.library.rx2.Swipe;
-import com.github.pwittchen.swipe.library.rx2.SwipeEvent;
-import com.github.pwittchen.swipe.library.rx2.SwipeListener;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
