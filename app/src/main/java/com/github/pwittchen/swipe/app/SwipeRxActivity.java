@@ -22,11 +22,9 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.widget.TextView;
 import com.github.pwittchen.swipe.library.Swipe;
-import com.github.pwittchen.swipe.library.SwipeEvent;
 import pwittchen.com.swipedetector.R;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
 public class SwipeRxActivity extends AppCompatActivity {
@@ -42,11 +40,7 @@ public class SwipeRxActivity extends AppCompatActivity {
     subscription = swipe.observe()
         .subscribeOn(Schedulers.computation())
         .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Action1<SwipeEvent>() {
-          @Override public void call(final SwipeEvent swipeEvent) {
-            info.setText(swipeEvent.toString());
-          }
-        });
+        .subscribe(swipeEvent -> info.setText(swipeEvent.toString()));
   }
 
   @Override public boolean dispatchTouchEvent(MotionEvent event) {
