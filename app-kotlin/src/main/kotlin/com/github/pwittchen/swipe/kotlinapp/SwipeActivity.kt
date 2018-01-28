@@ -38,32 +38,36 @@ class SwipeActivity : AppCompatActivity() {
         info.text = "SWIPING_LEFT"
       }
 
-      override fun onSwipedLeft(event: MotionEvent) {
+      override fun onSwipedLeft(event: MotionEvent): Boolean {
         info.text = "SWIPED_LEFT"
+        return false
       }
 
       override fun onSwipingRight(event: MotionEvent) {
         info.text = "SWIPING_RIGHT"
       }
 
-      override fun onSwipedRight(event: MotionEvent) {
+      override fun onSwipedRight(event: MotionEvent): Boolean {
         info.text = "SWIPED_RIGHT"
+        return false
       }
 
       override fun onSwipingUp(event: MotionEvent) {
         info.text = "SWIPING_UP"
       }
 
-      override fun onSwipedUp(event: MotionEvent) {
+      override fun onSwipedUp(event: MotionEvent): Boolean {
         info.text = "SWIPED_UP"
+        return false
       }
 
       override fun onSwipingDown(event: MotionEvent) {
         info.text = "SWIPING_DOWN"
       }
 
-      override fun onSwipedDown(event: MotionEvent) {
+      override fun onSwipedDown(event: MotionEvent): Boolean {
         info.text = "SWIPED_DOWN"
+        return false
       }
     })
   }

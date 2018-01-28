@@ -91,14 +91,16 @@ public class Swipe {
    *
    * @param event MotionEvent
    */
-  public void dispatchTouchEvent(final MotionEvent event) {
+  public boolean dispatchTouchEvent(final MotionEvent event) {
     checkNotNull(event, "event == null");
+    boolean isEventConsumed = false;
+
     switch (event.getAction()) {
       case MotionEvent.ACTION_DOWN: // user started touching the screen
         onActionDown(event);
         break;
       case MotionEvent.ACTION_UP:   // user stopped touching the screen
-        onActionUp(event);
+        isEventConsumed = onActionUp(event);
         break;
       case MotionEvent.ACTION_MOVE: // user is moving finger on the screen
         onActionMove(event);
@@ -106,6 +108,8 @@ public class Swipe {
       default:
         break;
     }
+
+    return isEventConsumed;
   }
 
   private void onActionDown(final MotionEvent event) {
@@ -113,21 +117,22 @@ public class Swipe {
     yDown = event.getY();
   }
 
-  private void onActionUp(final MotionEvent event) {
+  private boolean onActionUp(final MotionEvent event) {
     xUp = event.getX();
     yUp = event.getY();
     final boolean swipedHorizontally = Math.abs(xUp - xDown) > getSwipedThreshold();
     final boolean swipedVertically = Math.abs(yUp - yDown) > getSwipedThreshold();
+    boolean isEventConsumed = false;
 
     if (swipedHorizontally) {
       final boolean swipedRight = xUp > xDown;
       final boolean swipedLeft = xUp < xDown;
 
       if (swipedRight) {
-        swipeListener.onSwipedRight(event);
+        isEventConsumed = swipeListener.onSwipedRight(event);
       }
       if (swipedLeft) {
-        swipeListener.onSwipedLeft(event);
+        isEventConsumed |= swipeListener.onSwipedLeft(event);
       }
     }
 
@@ -135,12 +140,14 @@ public class Swipe {
       final boolean swipedDown = yDown < yUp;
       final boolean swipedUp = yDown > yUp;
       if (swipedDown) {
-        swipeListener.onSwipedDown(event);
+        isEventConsumed |= swipeListener.onSwipedDown(event);
       }
       if (swipedUp) {
-        swipeListener.onSwipedUp(event);
+        isEventConsumed |= swipeListener.onSwipedUp(event);
       }
     }
+
+    return isEventConsumed;
   }
 
   private void onActionMove(final MotionEvent event) {
@@ -180,32 +187,36 @@ public class Swipe {
         onNextSafely(SwipeEvent.SWIPING_LEFT);
       }
 
-      @Override public void onSwipedLeft(MotionEvent event) {
+      @Override public boolean onSwipedLeft(MotionEvent event) {
         onNextSafely(SwipeEvent.SWIPED_LEFT);
+        return false;
       }
 
       @Override public void onSwipingRight(MotionEvent event) {
         onNextSafely(SwipeEvent.SWIPING_RIGHT);
       }
 
-      @Override public void onSwipedRight(MotionEvent event) {
+      @Override public boolean onSwipedRight(MotionEvent event) {
         onNextSafely(SwipeEvent.SWIPED_RIGHT);
+        return false;
       }
 
       @Override public void onSwipingUp(MotionEvent event) {
         onNextSafely(SwipeEvent.SWIPING_UP);
       }
 
-      @Override public void onSwipedUp(MotionEvent event) {
+      @Override public boolean onSwipedUp(MotionEvent event) {
         onNextSafely(SwipeEvent.SWIPED_UP);
+        return false;
       }
 
       @Override public void onSwipingDown(MotionEvent event) {
         onNextSafely(SwipeEvent.SWIPING_DOWN);
       }
 
-      @Override public void onSwipedDown(MotionEvent event) {
+      @Override public boolean onSwipedDown(MotionEvent event) {
         onNextSafely(SwipeEvent.SWIPED_DOWN);
+        return false;
       }
     };
   }
