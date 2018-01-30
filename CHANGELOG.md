@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+v. 0.3.0
+--------
+*30 Jan 2018*
+
+- added possibility to consume touch events -> issue #27 -> PR #28
+- added abstract class `SimpleSwipeListener` implementing `SwipeListener` interface, which allows to implement several touch events without being forced to implement all of them -> PR #28
+- bumped RxJava2.x -> 2.1.9
+- bumped Truth -> 0.39
+- bumped Kotlin version -> 1.2.20
+
 v. 0.2.0
 --------
 *04 Jan 2018*
