@@ -41,39 +41,42 @@ public class SwipeActivity extends AppCompatActivity {
         info.setText("SWIPING_LEFT");
       }
 
-      @Override public void onSwipedLeft(final MotionEvent event) {
+      @Override public boolean onSwipedLeft(final MotionEvent event) {
         info.setText("SWIPED_LEFT");
+        return false;
       }
 
       @Override public void onSwipingRight(final MotionEvent event) {
         info.setText("SWIPING_RIGHT");
       }
 
-      @Override public void onSwipedRight(final MotionEvent event) {
+      @Override public boolean onSwipedRight(final MotionEvent event) {
         info.setText("SWIPED_RIGHT");
+        return false;
       }
 
       @Override public void onSwipingUp(final MotionEvent event) {
         info.setText("SWIPING_UP");
       }
 
-      @Override public void onSwipedUp(final MotionEvent event) {
+      @Override public boolean onSwipedUp(final MotionEvent event) {
         info.setText("SWIPED_UP");
+        return false;
       }
 
       @Override public void onSwipingDown(final MotionEvent event) {
         info.setText("SWIPING_DOWN");
       }
 
-      @Override public void onSwipedDown(final MotionEvent event) {
+      @Override public boolean onSwipedDown(final MotionEvent event) {
         info.setText("SWIPED_DOWN");
+        return false;
       }
     });
   }
 
   @Override public boolean dispatchTouchEvent(MotionEvent event) {
-    swipe.dispatchTouchEvent(event);
-    return super.dispatchTouchEvent(event);
+    return swipe.dispatchTouchEvent(event) || super.dispatchTouchEvent(event);
   }
 
   @Override public boolean onCreateOptionsMenu(Menu menu) {

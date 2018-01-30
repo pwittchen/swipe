@@ -6,14 +6,14 @@ ext {
   compileSdkVersion = 26
   buildToolsVersion = '26.0.2'
   gradleVersion = '3.0.1'
-  kotlinVersion = '1.1.61'
+  kotlinVersion = '1.2.20'
 }
 
-ext.deps = [rxjava2           : 'io.reactivex.rxjava2:rxjava:2.1.8',
+ext.deps = [rxjava2           : 'io.reactivex.rxjava2:rxjava:2.1.9',
             rxandroid2        : 'io.reactivex.rxjava2:rxandroid:2.0.1',
             appcompatv7       : 'com.android.support:appcompat-v7:27.0.2',
             junit             : 'junit:junit:4.12',
-            truth             : 'com.google.truth:truth:0.37',
+            truth             : 'com.google.truth:truth:0.39',
             mockitocore       : 'org.mockito:mockito-core:2.13.0',
             kotlinstdlib      : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
             kotlingradleplugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"]

@@ -44,8 +44,7 @@ class SwipeRxActivity : AppCompatActivity() {
   }
 
   override fun dispatchTouchEvent(event: MotionEvent): Boolean {
-    (swipe as Swipe).dispatchTouchEvent(event)
-    return super.dispatchTouchEvent(event)
+    return (swipe as Swipe).dispatchTouchEvent(event) || super.dispatchTouchEvent(event)
   }
 
   override fun onPause() {

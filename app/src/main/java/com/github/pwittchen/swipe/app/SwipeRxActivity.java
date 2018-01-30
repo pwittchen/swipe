@@ -44,8 +44,7 @@ public class SwipeRxActivity extends AppCompatActivity {
   }
 
   @Override public boolean dispatchTouchEvent(MotionEvent event) {
-    swipe.dispatchTouchEvent(event);
-    return super.dispatchTouchEvent(event);
+    return swipe.dispatchTouchEvent(event) || super.dispatchTouchEvent(event);
   }
 
   @Override protected void onPause() {
