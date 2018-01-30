@@ -73,12 +73,6 @@ public class Swipe {
    */
   public Observable<SwipeEvent> observe() {
     this.swipeListener = createReactiveSwipeListener();
-    //return Observable.unsafeCreate(new Observable.OnSubscribe<SwipeEvent>() {
-    //  @Override public void call(final Subscriber<? super SwipeEvent> subscriber) {
-    //    Swipe.this.subscriber = subscriber;
-    //  }
-    //});
-
     return Observable.create(new ObservableOnSubscribe<SwipeEvent>() {
       @Override public void subscribe(ObservableEmitter<SwipeEvent> emitter) throws Exception {
         Swipe.this.emitter = emitter;
