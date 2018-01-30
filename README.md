@@ -20,6 +20,7 @@ Contents
   - [Imperative way - Listener](#imperative-way---listener)
   - [Reactive way - RxJava](#reactive-way---rxjava)
 - [Configuring swipe threshold](#configuring-swipe-threshold)
+- [Listening to several events](#listening-to-several-events)
 - [Example](#example)
 - [Download](#download)
 - [Tests](#tests)
@@ -168,6 +169,11 @@ Default `swipingThreshold` is equal to `20` and default `swipedThreshold` is equ
 In the case of using `Swipe()` constructor, these values are set.
 Decreasing these values will increase swiping and swiped events sensitivity.
 We can adjust them manually for our needs.
+
+Listening to several events
+---------------------------
+
+If you want to react only on one event or several events in imperative way, use abstract class `SimpleSwipeListener` instead of `SwipeListener` interface and implement methods, which you need.
 
 Example
 -------
