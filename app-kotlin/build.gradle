@@ -7,7 +7,7 @@ android {
   buildToolsVersion rootProject.ext.buildToolsVersion
 
   defaultConfig {
-    minSdkVersion rootProject.ext.minSdkVersionApps
+    minSdkVersion rootProject.ext.minSdkVersion
     targetSdkVersion rootProject.ext.compileSdkVersion
     applicationId "com.github.pwittchen.swipe.kotlinapp"
     versionCode 1
