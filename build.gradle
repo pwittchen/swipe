@@ -8,7 +8,7 @@ ext {
   kotlinVersion = '1.3.60'
 }
 
-ext.deps = [rxjava2           : 'io.reactivex.rxjava2:rxjava:2.2.14',
+ext.deps = [rxjava2           : 'io.reactivex.rxjava2:rxjava:2.2.15',
             rxandroid2        : 'io.reactivex.rxjava2:rxandroid:2.1.1',
             appcompatv7       : 'com.android.support:appcompat-v7:28.0.0',
             junit             : 'junit:junit:4.12',
