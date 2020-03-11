@@ -5,6 +5,7 @@ android {
   buildToolsVersion rootProject.ext.buildToolsVersion
 
   defaultConfig {
+    multiDexEnabled true
     minSdkVersion rootProject.ext.minSdkVersion
     targetSdkVersion rootProject.ext.compileSdkVersion
     applicationId "pwittchen.com.swipedetector"
@@ -29,5 +30,5 @@ dependencies {
   implementation project(':library')
   implementation deps.rxjava2
   implementation deps.rxandroid2
-  implementation deps.appcompatv7
+  implementation deps.appcompat
 }

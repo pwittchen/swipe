@@ -16,15 +16,15 @@
 package com.github.pwittchen.swipe.kotlinapp
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
+import androidx.appcompat.app.AppCompatActivity
 import com.github.pwittchen.swipe.library.rx2.Swipe
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers.computation
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.info
 
 class SwipeRxActivity : AppCompatActivity() {
 

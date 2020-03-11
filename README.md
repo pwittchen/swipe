@@ -45,10 +45,10 @@ private Swipe swipe;
 ```java
 @Override protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
-  
+
   setContentView(R.layout.activity_main);
   info = (TextView) findViewById(R.id.info);
-  
+
   swipe = new Swipe();
   swipe.setListener(new SwipeListener() {
     @Override public void onSwipingLeft(final MotionEvent event) {
@@ -111,9 +111,9 @@ private Disposable disposable;
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_main);
   info = (TextView) findViewById(R.id.info);
-  
+
   swipe = new Swipe();
-  
+
   disposable = swipe.observe()
       .subscribeOn(Schedulers.computation())
       .observeOn(AndroidSchedulers.mainThread())
@@ -224,7 +224,7 @@ Code style used in the project is called `SquareAndroid` from Java Code Styles r
 Static code analysis
 --------------------
 
-Static code analysis runs Checkstyle, FindBugs, PMD and Lint. It can be executed with command:
+Static code analysis runs Checkstyle, PMD and Lint. It can be executed with command:
 
  ```
  ./gradlew check
