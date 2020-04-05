@@ -236,7 +236,7 @@ References
 ----------
 
 - [better gesture detector project](https://github.com/Polidea/better-gesture-detector)
-- [detecting swipe gesture in mobile application](http://blog.wittchen.biz.pl/detecting-swipe-gesture-in-mobile-application/)
+- [detecting swipe gesture in mobile application](http://wittchen.io/detecting-swipe-gesture-in-mobile-application/)
 - [dispatchTouchEvent(event) method in documentation](http://developer.android.com/reference/android/view/ViewGroup.html#dispatchTouchEvent(android.view.MotionEvent))
 - [MotionEvent class in documentation](http://developer.android.com/reference/android/view/MotionEvent.html)
 
