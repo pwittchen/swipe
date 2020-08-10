@@ -10,7 +10,7 @@ ext {
 
 ext.deps = [rxjava2           : 'io.reactivex.rxjava2:rxjava:2.2.19',
             rxandroid2        : 'io.reactivex.rxjava2:rxandroid:2.1.1',
-            appcompat         : 'androidx.appcompat:appcompat:1.1.0',
+            appcompat         : 'androidx.appcompat:appcompat:1.2.0',
             junit             : 'junit:junit:4.13',
             truth             : 'com.google.truth:truth:1.0.1',
             mockitocore       : 'org.mockito:mockito-core:3.4.6',
